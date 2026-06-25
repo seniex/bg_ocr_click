@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bg-ocr-click"
+version = "0.1.0"
+description = "Background OCR click automation tool"
+requires-python = ">=3.9"
+dependencies = [
+  "Pillow",
+  "pytesseract",
+  "pyautogui",
+  "screeninfo",
+  "opencv-python",
+  "numpy",
+  "keyboard",
+  "psutil",
+  "pywin32; platform_system == 'Windows'",
+]
+
+[project.scripts]
+bg-ocr-click = "bg_ocr_click:main"
+
+[tool.setuptools]
+py-modules = [
+  "bg_ocr_click",
+  "bg_ocr_config",
+  "bg_ocr_capture",
+  "bg_ocr_ocr",
+  "bg_ocr_matching",
+  "bg_ocr_mouse",
+  "bg_ocr_system",
+]

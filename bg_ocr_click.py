@@ -3856,26 +3856,44 @@ from bg_ocr_system import _is_admin, _relaunch_as_admin, list_windows, list_wind
 
 _paddle_engine = get_paddle_engine()
 
-def main():
+
+def _launch_tk(reason=None):
     if not HAS_WIN32 or not HAS_PIL:
-        root=tk.Tk(); root.withdraw()
-        messagebox.showerror("缺少依赖",
-            f"缺少：{', '.join(MISSING)}\n\n"
-            "pip install pywin32 Pillow pytesseract pyautogui screeninfo opencv-python numpy")
-        root.destroy(); sys.exit(1)
+        root = tk.Tk()
+        root.withdraw()
+        detail = f"缺少：{', '.join(MISSING)}\n\n" if MISSING else ""
+        messagebox.showerror(
+            "缺少依赖",
+            detail + "pip install pywin32 Pillow pytesseract pyautogui screeninfo opencv-python numpy",
+        )
+        root.destroy()
+        sys.exit(1)
 
     if not _is_admin():
-        root=tk.Tk(); root.withdraw()
-        ans=messagebox.askyesno("权限提示",
+        root = tk.Tk()
+        root.withdraw()
+        ans = messagebox.askyesno(
+            "权限提示",
             "当前非管理员权限。\n\n"
-            "PrintWindow截图（被遮挡时有效）需要管理员权限，\n"
+            "PrintWindow截图（被遮挡时有效）需要管理员权限。\n"
             "非管理员运行截图可能黑屏。\n\n"
-            "是否以管理员权限重启？")
+            "是否以管理员权限重启？",
+        )
         root.destroy()
-        if ans: _relaunch_as_admin()
+        if ans:
+            _relaunch_as_admin()
 
     App().mainloop()
 
 
-if __name__=="__main__":
+def main():
+    try:
+        from bg_ocr_qt import main as _qt_main
+
+        return _qt_main(fallback_to_tk=True)
+    except Exception:
+        return _launch_tk()
+
+
+if __name__ == "__main__":
     main()

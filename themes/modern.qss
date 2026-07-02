@@ -1,0 +1,321 @@
+QMainWindow,
+QDialog,
+QWidget {
+  background: #202328;
+  color: #eef1f4;
+}
+
+QTabWidget::pane,
+QGroupBox,
+QFrame,
+QScrollArea {
+  border: 1px solid #3a424d;
+}
+
+QScrollArea {
+  background: #2a2f36;
+}
+
+QSplitter::handle {
+  background: #3a424d;
+}
+
+QListWidget#pageNav,
+QWidget#groupSidebar {
+  min-width: 190px;
+  max-width: 240px;
+}
+
+QListWidget#pageNav {
+  font-weight: 600;
+  min-height: 96px;
+  max-height: 96px;
+}
+
+QWidget#groupSidebar QListWidget#groupList {
+  min-height: 180px;
+}
+
+QWidget#groupSidebar QPushButton#groupSidebarButton {
+  min-width: 36px;
+  padding: 4px 6px;
+}
+
+QWidget#groupSidebar QPushButton#groupSidebarSaveButton {
+  min-width: 150px;
+}
+
+QListWidget#windowDetailList {
+  max-height: 130px;
+}
+
+QWidget#homeTab QLineEdit#windowTitleFilter {
+  min-width: 220px;
+}
+
+QWidget#homeTab QPushButton#windowBindButton {
+  min-width: 88px;
+  padding: 4px 8px;
+}
+
+QTableWidget#quickConfigTable QLineEdit#quickTemplatePath {
+  min-width: 160px;
+}
+
+QTableWidget#quickConfigTable QPushButton#quickTemplateButton {
+  min-width: 48px;
+  padding: 4px 8px;
+}
+
+QWidget#homeTab QPushButton#quickConfigActionButton {
+  min-width: 112px;
+  padding: 4px 8px;
+}
+
+QWidget#homeTab QPushButton#homeLogClearButton {
+  min-width: 96px;
+}
+
+QPushButton {
+  background: #2f7d68;
+  color: #ffffff;
+  border: 1px solid #286b59;
+  padding: 5px 10px;
+}
+
+QPushButton:disabled {
+  background: #4b535c;
+  border-color: #454c54;
+}
+
+QDialogButtonBox QPushButton {
+  min-width: 72px;
+}
+
+QCheckBox {
+  spacing: 6px;
+}
+
+QLabel#statusDot[running="true"] {
+  color: #42c987;
+}
+
+QLabel#statusDot[running="false"] {
+  color: #8a94a3;
+}
+
+QLabel#boundWindowLabel {
+  min-width: 220px;
+}
+
+QPushButton#runtimeControlButton {
+  min-width: 88px;
+  padding: 4px 8px;
+}
+
+QLabel#pickerInfo {
+  color: #b7c0cb;
+}
+
+QLabel#pickerImage {
+  qproperty-selectionColor: #42c987;
+  qproperty-selectionPenWidth: 2;
+}
+
+QDialog#imagePickerDialog {
+  min-width: 640px;
+  min-height: 420px;
+}
+
+QDialog#screenPointOverlay {
+  background-color: transparent;
+}
+
+QLabel#screenPointHint {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 180);
+  padding: 10px 14px;
+}
+
+QTextEdit#homeLog {
+  min-height: 260px;
+}
+
+QPlainTextEdit#dependencyStatus {
+  min-height: 140px;
+}
+
+QWidget#settingsTab QPushButton#settingsSaveButton {
+  min-width: 112px;
+  padding: 4px 8px;
+}
+
+QWidget#settingsEditor QLineEdit#settingsPathField {
+  min-width: 280px;
+}
+
+QWidget#settingsEditor QPushButton#settingsBrowseButton,
+QWidget#settingsEditor QPushButton#settingsSoundTestButton {
+  min-width: 64px;
+  padding: 4px 8px;
+}
+
+QWidget#groupEditor QPlainTextEdit {
+  min-height: 120px;
+}
+
+QWidget#groupEditor QLineEdit,
+QWidget#groupEditor QComboBox,
+QWidget#groupEditor QSpinBox,
+QWidget#groupEditor QDoubleSpinBox {
+  min-width: 72px;
+  max-width: 180px;
+}
+
+QWidget#groupEditor QLineEdit {
+  min-width: 72px;
+}
+
+QWidget#groupEditor QComboBox[fieldSize="short"] {
+  min-width: 64px;
+  max-width: 112px;
+}
+
+QLabel#keywordHelp {
+  color: #b7c0cb;
+}
+
+QWidget#groupEditor QGroupBox {
+  margin-top: 8px;
+  padding: 10px;
+}
+
+QWidget#groupEditor QGroupBox#groupSectionActions,
+QWidget#groupEditor QGroupBox#groupSectionClick,
+QWidget#groupEditor QGroupBox#groupSectionPopup {
+  margin-top: 10px;
+  padding: 12px;
+}
+
+QWidget#groupEditor QPlainTextEdit#popupTemplatesJson {
+  min-height: 160px;
+}
+
+QWidget#groupEditor QPushButton#popupTemplatesEditButton {
+  min-width: 160px;
+}
+
+QWidget#groupEditor QGroupBox::title {
+  subcontrol-origin: margin;
+  left: 8px;
+  padding: 0 4px;
+}
+
+QDialog#actionSequenceDialog {
+  min-width: 1000px;
+  min-height: 560px;
+}
+
+QDialog#actionJsonDialog {
+  min-width: 720px;
+  min-height: 480px;
+}
+
+QPlainTextEdit#actionJsonEditor {
+  min-height: 360px;
+}
+
+QLabel#actionSequenceDragHandle {
+  min-width: 72px;
+}
+
+QWidget#actionSequenceEditor,
+QScrollArea#actionSequenceScroll {
+  min-height: 400px;
+}
+
+QWidget#actionSequenceInlineRow {
+  border-bottom: 1px solid #3a424d;
+  padding: 3px 0;
+}
+
+QPushButton#actionPointPickButton {
+  min-width: 52px;
+  padding: 4px 8px;
+}
+
+QDialog#popupTemplateDialog {
+  min-width: 980px;
+  min-height: 680px;
+}
+
+QDialog#popupTemplateDialog QListWidget#popupTemplateList {
+  min-width: 220px;
+}
+
+QDialog#popupTemplateDialog QScrollArea#popupTemplateFormScroll {
+  min-width: 520px;
+}
+
+QDialog#popupTemplateDialog QLineEdit#popupTemplateTextField {
+  min-width: 220px;
+}
+
+QDialog#popupTemplateDialog QPushButton#popupTemplateToolbarButton,
+QDialog#popupTemplateDialog QPushButton#popupTemplateCompactButton {
+  min-width: 64px;
+  padding: 4px 8px;
+}
+
+QDialog#popupTemplateDialog QPushButton#popupTemplateActionsButton {
+  min-width: 120px;
+}
+
+QDialog#windowPickerDialog {
+  min-width: 780px;
+  min-height: 560px;
+}
+
+QDialog#windowPickerDialog QLineEdit#windowPickerFilter {
+  min-width: 280px;
+}
+
+QDialog#windowPickerDialog QListWidget#windowPickerList {
+  min-height: 320px;
+}
+
+QDialog#windowPickerDialog QPushButton#windowPickerActionButton {
+  min-width: 72px;
+  padding: 4px 8px;
+}
+
+QLineEdit,
+QPlainTextEdit,
+QTextEdit,
+QComboBox,
+QSpinBox,
+QDoubleSpinBox,
+QTableWidget,
+QListWidget {
+  background: #2a2f36;
+  color: #eef1f4;
+  border: 1px solid #4a5360;
+  selection-background-color: #355f77;
+}
+
+QListWidget::item {
+  padding: 4px 6px;
+}
+
+QListWidget::item:selected,
+QTableWidget::item:selected {
+  background: #355f77;
+  color: #ffffff;
+}
+
+QHeaderView::section {
+  background: #303740;
+  color: #eef1f4;
+  border: 1px solid #4a5360;
+  padding: 4px 6px;
+}

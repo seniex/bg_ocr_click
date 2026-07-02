@@ -21,16 +21,11 @@ dependencies = [
 ]
 
 [project.scripts]
-bg-ocr-click = "bg_ocr_click:main"
+bg-ocr-click = "bg_ocr_qt:main"
 
 [tool.setuptools]
-py-modules = [
-  "bg_ocr_click",
-  "bg_ocr_config",
-  "bg_ocr_capture",
-  "bg_ocr_ocr",
-  "bg_ocr_matching",
-  "bg_ocr_qt",
-  "bg_ocr_mouse",
-  "bg_ocr_system",
-]
+packages = ["bg_ocr", "bg_ocr.qt", "themes"]
+py-modules = ["bg_ocr_qt"]
+
+[tool.setuptools.package-data]
+themes = ["*.qss"]

@@ -5,7 +5,7 @@ import random
 import threading
 import time
 
-from bg_ocr_config import LOG_FILE as _LOG_FILE
+from bg_ocr.config import LOG_FILE as _LOG_FILE
 
 HAS_WIN32 = False
 HAS_PYAUTOGUI = False

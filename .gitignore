@@ -13,3 +13,6 @@ venv/
 env/
 log/
 config/*.json
+package_only/
+.superpowers/
+docs/superpowers/plans/

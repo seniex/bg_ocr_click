@@ -5,13 +5,15 @@ import json
 import os
 import time
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_DIR = os.path.join(BASE_DIR, "config")
 CONFIG_FILE = os.path.join(CONFIG_DIR, "bg_ocr_click.json")
 LOG_DIR = os.path.join(BASE_DIR, "log")
 SCRIPT_NAME = "bg_ocr_click"
 LOG_FILE = os.path.join(LOG_DIR, f"{SCRIPT_NAME}_{time.strftime('%Y%m%d_%H%M%S')}.log")
 os.makedirs(LOG_DIR, exist_ok=True)
+
+DEFAULT_WINDOW_GEOMETRY = "1180x860"
 
 
 GROUP_DEFAULT = {
@@ -105,13 +107,19 @@ def _ensure_dirs() -> None:
     os.makedirs(LOG_DIR, exist_ok=True)
 
 
+def parse_window_geometry(value):
+    width, height = [int(x) for x in str(value).lower().split("x", 1)]
+    return width, height
+
+
 def load_config():
     _ensure_dirs()
     default = {
         "target_hwnd": 0,
         "target_title": "",
-        "window_geometry": "1020x750",
+        "window_geometry": DEFAULT_WINDOW_GEOMETRY,
         "capture_mode": "printwindow",
+        "theme": "default",
         "tesseract_path": r"C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
         "paddle_exe_path": "",
         "sound_enabled": False,
@@ -119,6 +127,7 @@ def load_config():
         "sound_on_match": True,
         "sound_on_popup_match": False,
         "sound_on_no_match": True,
+        "start_on_launch": True,
         "auto_bind_enabled": False,
         "auto_bind_process": "",
         "hotkey_start": "",

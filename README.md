@@ -4,13 +4,12 @@ Windows background OCR click automation tool.
 
 ## Project Layout
 
-- `bg_ocr_click.py`: Tkinter UI and workflow orchestration.
-- `bg_ocr_config.py`: config defaults, config file IO, and log path setup.
-- `bg_ocr_capture.py`: window capture helpers.
-- `bg_ocr_ocr.py`: image preprocessing and OCR engines.
-- `bg_ocr_matching.py`: keyword, template image, and color matching helpers.
-- `bg_ocr_mouse.py`: background/foreground mouse and action sequence helpers.
-- `bg_ocr_system.py`: admin elevation and window enumeration helpers.
+- `bg_ocr_qt.py`: root Qt entry point; re-exports the Qt app surface for existing `bg_ocr_qt` imports.
+- `bg_ocr/`: application package for shared runtime logic.
+- `bg_ocr/compat.py`: compatibility re-export module for historical runtime imports.
+- `bg_ocr/qt/`: focused Qt UI modules, including app launch, main window, dialogs, settings, state, and lifecycle helpers.
+- `themes/`: QSS theme files.
+- `tests/`: offscreen Qt smoke tests and runtime helper tests.
 
 ## Install
 
@@ -21,7 +20,7 @@ python -m pip install -e .
 ## Run
 
 ```bash
-python bg_ocr_click.py
+python bg_ocr_qt.py
 ```
 
 Or after editable install:
@@ -33,6 +32,6 @@ bg-ocr-click
 ## Check
 
 ```bash
-python -m py_compile bg_ocr_click.py bg_ocr_config.py bg_ocr_capture.py bg_ocr_ocr.py bg_ocr_matching.py bg_ocr_mouse.py bg_ocr_system.py
-python -m unittest discover -s tests
+python -m compileall .
+python -m unittest discover -s tests -v
 ```
